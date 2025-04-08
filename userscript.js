@@ -13,28 +13,12 @@
 (function () {
   "use strict";
 
-  const reactions = [
-    { type: 100, icon: "👏", name: "clap" },
-    { type: 101, icon: "🎉", name: "party" },
-    { type: 102, icon: "👀", name: "look" },
-    { type: 103, icon: "😎", name: "cool" },
-    { type: 104, icon: "💯", name: "100" },
-    { type: 105, icon: "🔥", name: "fire" },
-    { type: 106, icon: "❤️‍🔥", name: "lovefire" },
-    { type: 107, icon: "🤩", name: "wow" },
-    { type: 108, icon: "😡", name: "angry" },
-    { type: 109, icon: "🤔", name: "think" },
-    { type: 110, icon: "😂", name: "laugh" },
-    { type: 111, icon: "😭", name: "cry" },
-    { type: 112, icon: "😘", name: "kiss" },
-    { type: 113, icon: "😴", name: "sleep" },
-    { type: 114, icon: "🫶", name: "hearthands" },
-    { type: 115, icon: "👍", name: "like" },
-    { type: 116, icon: "👎", name: "dislike" },
-    { type: 117, icon: "🤯", name: "mindblown" },
-    { type: 118, icon: "😱", name: "shock" },
-    { type: 119, icon: "🤮", name: "disgust" },
-  ];
+  const emojiChars = "😀😃😄😁😆😅😂🤣😊😇🙂🙃😉😌😍🥰😘😗😙😚🤗🤩🤔🤨😐😑😶😏😒🙄😬🤐😴😪😵‍💫😮‍💨😷🤒🤕🤢🤮🥵🥶😎🧐🤓😤😠😡🤬🥱😳🥴🤯😨😰😥😓😭😢😞😔😟😕🙁☹️😣😖😫😩🥺😬🫣🫠😇🤠🥳😈👿👹👺💀👻👽🤖💩😺😸😹😻😼😽🙀😿😾👍👎👊✊🤛🤜👏🙌👐🤲🤝🙏✍️💅🤳💪🦾🦿🧠🫀🫁👀👁️👅👄🦷👃"; // bạn có thể thêm nữa
+const reactions = Array.from(emojiChars).map((icon, idx) => ({
+  type: 200 + idx,
+  icon,
+  name: `emoji${idx}`,
+}));
 
   const observer = new MutationObserver(mutations => {
     for (const m of mutations) {
